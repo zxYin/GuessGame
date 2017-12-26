@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GuessWinView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygt-9e-vHI">
+                    <rect key="frame" x="97.5" y="288.5" width="90" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="rfu-jG-oVN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                    <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1e-eJ-CqM">
+                    <rect key="frame" x="187.5" y="288.5" width="90" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="RFc-QY-suO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                    <color key="textColor" red="0.13725490200000001" green="0.67843137249999996" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQj-Nk-jd1">
+                    <rect key="frame" x="97" y="348.5" width="180" height="50"/>
+                    <color key="backgroundColor" red="0.90882772840000003" green="0.90882772840000003" blue="0.90882772840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="JWe-c5-c6R"/>
+                        <constraint firstAttribute="height" constant="50" id="POg-VA-PCe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Play Again">
+                        <color key="titleColor" red="0.36607709389999998" green="0.36607709389999998" blue="0.36607709389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ygt-9e-vHI" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-30" id="30z-0Y-a38"/>
+                <constraint firstItem="RQj-Nk-jd1" firstAttribute="top" secondItem="ygt-9e-vHI" secondAttribute="bottom" constant="10" id="Isv-Ni-gag"/>
+                <constraint firstItem="k1e-eJ-CqM" firstAttribute="width" secondItem="ygt-9e-vHI" secondAttribute="width" id="K9U-qf-NVO"/>
+                <constraint firstItem="k1e-eJ-CqM" firstAttribute="leading" secondItem="ygt-9e-vHI" secondAttribute="trailing" id="Obn-6p-lMm"/>
+                <constraint firstItem="k1e-eJ-CqM" firstAttribute="centerY" secondItem="ygt-9e-vHI" secondAttribute="centerY" id="Olp-Qi-kAn"/>
+                <constraint firstItem="k1e-eJ-CqM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="45" id="RiK-Wx-35P"/>
+                <constraint firstItem="RQj-Nk-jd1" firstAttribute="leading" secondItem="ygt-9e-vHI" secondAttribute="leading" id="Y0A-8i-LXf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="againButton" destination="RQj-Nk-jd1" id="hGJ-TM-ilb"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="109.5"/>
+        </view>
+    </objects>
+</document>
