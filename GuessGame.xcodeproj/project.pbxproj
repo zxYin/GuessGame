@@ -146,10 +146,8 @@
 				658C5EF51FEFFF060075E64E /* ViewModel */,
 				658C5EF11FEFFE290075E64E /* Model */,
 				650DBA4E1FEFEE7600A17EE0 /* View */,
-				65EE08991FF256F0006BC666 /* GuessWinView */,
 				650DBA441FEF448E00A17EE0 /* Supporting Files */,
 				650DBA201FEF448A00A17EE0 /* Info.plist */,
-				650DBA181FEF448A00A17EE0 /* Main.storyboard */,
 			);
 			path = GuessGame;
 			sourceTree = "<group>";
@@ -184,19 +182,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		650DBA4A1FEFEE2300A17EE0 /* Controller */ = {
+		650DBA4E1FEFEE7600A17EE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				650DBA151FEF448A00A17EE0 /* GuessViewController.h */,
 				650DBA161FEF448A00A17EE0 /* GuessViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		650DBA4E1FEFEE7600A17EE0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				650DBA4A1FEFEE2300A17EE0 /* Controller */,
+				650DBA181FEF448A00A17EE0 /* Main.storyboard */,
+				65EE08991FF256F0006BC666 /* GuessWinView */,
 				6539D1C01FF102F7003ED34B /* GuessInputView */,
 				658C5EF01FEFFAF00075E64E /* GuessHistoryCell */,
 				658C5EEF1FEFFAE50075E64E /* GuessNumberView */,
