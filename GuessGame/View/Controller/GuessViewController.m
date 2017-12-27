@@ -74,6 +74,7 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
     self.addButton.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.addButton];
     [self.addButton addTarget:self action:@selector(addButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.addButton setExclusiveTouch:YES];
     
     self.settingButton = [[UIButton alloc] initWithFrame:CGRectMake(20, buttonCenterY - smallButtonRadius, 2 * smallButtonRadius, 2 * smallButtonRadius)];
     self.settingButton.layer.cornerRadius = 0;
@@ -81,6 +82,7 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
     self.settingButton.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.settingButton];
     [self.settingButton addTarget:self action:@selector(settingButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.settingButton setExclusiveTouch:YES];
     
     self.shareButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 20 - 2 * smallButtonRadius, buttonCenterY - smallButtonRadius, 2 * smallButtonRadius, 2 * smallButtonRadius)];
     self.shareButton.layer.cornerRadius = 0;
@@ -88,6 +90,7 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
     self.shareButton.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.shareButton];
     [self.shareButton addTarget:self action:@selector(shareButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.shareButton setExclusiveTouch:YES];
     
     self.confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2, buttonCenterY, 0, 0)];
     self.confirmButton.layer.cornerRadius = 0;
@@ -97,6 +100,7 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
     [self.view addSubview:self.confirmButton];
     self.confirmButton.hidden = YES;
     [self.confirmButton addTarget:self action:@selector(confirmButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.confirmButton setExclusiveTouch:YES];
     
     self.cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2, buttonCenterY, 0, 0)];
     self.cancelButton.layer.cornerRadius = 0;
@@ -106,7 +110,7 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
     [self.view addSubview:self.cancelButton];
     self.cancelButton.hidden = YES;
     [self.cancelButton addTarget:self action:@selector(cancelButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self.cancelButton setExclusiveTouch:YES];
 }
 
 - (void)setupRAC {
@@ -127,9 +131,6 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
     }];
 }
 
-- (void)reset {
-    [self.viewModel reset];
-}
 #pragma mark - animation
 - (void)pushButtonAction {
     //addButton disappear
@@ -286,7 +287,6 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
             self.guessInputView.frame = CGRectMake(0, buttonCenterY + normalButtonRadius + 10 + lineImageViewHeight, self.view.frame.size.width, self.guessInputViewHeight);
         } completion:^(BOOL finished) {
             self.guessWinView.hidden = YES;
-            [self.guessInputView.guessInputTextField becomeFirstResponder];
         }];
     } else {
         [UIView animateWithDuration:0.6 delay:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -295,9 +295,9 @@ typedef NS_ENUM(NSInteger, ConfirmAndCancelButtonMode) {
             self.guessInputView.frame = CGRectMake(0, buttonCenterY + normalButtonRadius + 10 + lineImageViewHeight, self.view.frame.size.width, self.guessInputViewHeight);
         } completion:^(BOOL finished) {
             self.tableView.hidden = YES;
-            [self.guessInputView.guessInputTextField becomeFirstResponder];
         }];
     }
+    [self.guessInputView.guessInputTextField becomeFirstResponder];
 }
 
 - (void)changeToTableViewAction {
